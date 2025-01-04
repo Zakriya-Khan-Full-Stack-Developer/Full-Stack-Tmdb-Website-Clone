@@ -1,0 +1,217 @@
+/* General Button Styling */
+button {
+    background-color: var(--color-primary); /* Replace with TMDB's primary color */
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px; /* Base padding */
+    font-size: 14px; /* Base font size */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--color-primary-dark); /* Darker shade for hover */
+    transform: translateY(-2px); /* Slight elevation effect */
+}
+
+button:active {
+    background-color: var(--color-primary-dark); /* Same as hover */
+    transform: translateY(0); /* Reset elevation */
+}
+
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+/* Responsive Button Sizes */
+
+/* For small screens up to 480px */
+@media (max-width: 480px) {
+    button {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    /* Header Adjustment */
+    header {
+        padding: 8px 16px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* Navigation Styling */
+    nav {
+        flex-direction: column;
+        gap: 8px;
+        font-size: 12px;
+        margin-top: 8px;
+        width: 100%;
+        text-align: left;
+    }
+
+    nav a {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+
+    .dropdown-button {
+        font-size: 12px;
+    }
+
+    /* Dropdown Adjustments */
+    .dropdown-content {
+        width: 100%;
+        position: relative;
+        padding: 8px;
+        box-shadow: none;
+    }
+
+    /* Modal Adjustments */
+    .modal-content {
+        width: 100%;
+        padding: 8px;
+        border-radius: 0;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    /* User Profile Layout */
+    .user-profile {
+        flex-direction: column;
+        gap: 8px;
+        width: 100%;
+        margin-top: 8px;
+    }
+}
+
+/* For tablets (up to 768px) */
+@media (max-width: 768px) {
+    button {
+        font-size: 13px;
+        padding: 6px 12px;
+    }
+
+    /* Header Adjustments */
+    header {
+        padding: 10px 20px;
+    }
+
+    /* Navigation Styling */
+    nav {
+        flex-direction: column;
+        gap: 10px;
+        font-size: 13px;
+        margin-top: 10px;
+    }
+
+    nav a {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+
+    .dropdown-button {
+        font-size: 13px;
+    }
+
+    /* Dropdown Styling */
+    .dropdown-content {
+        width: 100%;
+        position: relative;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+    }
+
+    /* User Profile */
+    .user-profile {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    /* Modal Styling */
+    .modal-content {
+        max-width: 90%;
+        padding: 12px;
+        border-radius: 8px;
+    }
+}
+
+/* For small laptops up to 1024px */
+@media (max-width: 1024px) {
+    button {
+        font-size: 14px;
+        padding: 8px 14px;
+    }
+
+    /* Header Adjustments */
+    header {
+        padding: 12px 24px;
+    }
+
+    /* Navigation Styling */
+    nav {
+        font-size: 14px;
+        gap: 14px;
+        font-weight: 500;
+    }
+
+    /* Dropdown Menu */
+    .dropdown-button {
+        font-size: 14px;
+    }
+
+    /* User Profile */
+    .user-profile {
+        gap: 14px;
+        width: 100%;
+    }
+
+    /* Modal Adjustments */
+    .modal-content {
+        max-width: 700px;
+        padding: 14px;
+        border-radius: 8px;
+    }
+}
+
+/* For larger screens above 1024px */
+@media (min-width: 1025px) {
+    button {
+        font-size: 15px;
+        padding: 10px 16px;
+    }
+
+    /* Header Padding Adjustment */
+    header {
+        padding: 16px 32px;
+    }
+
+    /* Navigation Styling */
+    nav {
+        font-size: 16px;
+        gap: 18px;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    /* Dropdown Menu */
+    .dropdown-button {
+        font-size: 15px;
+    }
+
+    /* User Profile */
+    .user-profile {
+        gap: 18px;
+    }
+
+    /* Modal Styling */
+    .modal-content {
+        padding: 20px;
+        width: 60%;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+    }
+}
