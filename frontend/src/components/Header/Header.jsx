@@ -35,7 +35,7 @@ const Header = ({ toggleMenu, isMenuOpen }) => {
   // Re-fetch user profile when token or score changes
   useEffect(() => {
     fetchUserProfile();
-  }, [token, score,scores]); // Dependencies: token or score change will trigger refetch
+  }, [token, score, scores]); // Dependencies: token or score change will trigger refetch
 
   const handleLogout = () => {
     localStorage.removeItem("access");
@@ -44,7 +44,7 @@ const Header = ({ toggleMenu, isMenuOpen }) => {
   };
 
   return (
-    <header className="bg-[#141414] text-white flex items-center justify-between px-3 sm:px-6 py-2 sm:py-3 shadow-md sticky top-0 z-50">
+    <header className="bg-red-500 text-white flex items-center justify-between px-3 sm:px-6 py-2 sm:py-3 shadow-md sticky top-0 z-50">
       {/* Hamburger Menu for Mobile */}
       <button
         onClick={toggleMenu}
@@ -70,7 +70,7 @@ const Header = ({ toggleMenu, isMenuOpen }) => {
       <nav
         className={`${
           isMenuOpen ? "block opacity-100" : "hidden sm:block opacity-100"
-        } sm:flex flex-col sm:flex-row items-center w-full sm:w-auto bg-[#141414] sm:bg-transparent transition-all duration-300 ease-in-out`}
+        } sm:flex flex-col sm:flex-row items-center w-full sm:w-auto bg-blue-600 sm:bg-transparent transition-all duration-300 ease-in-out`}
       >
         <NavMenu navigate={navigate} userId={user ? user.user._id : null} />
       </nav>

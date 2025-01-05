@@ -23,9 +23,12 @@ const LatestTrailers = () => {
           try {
             const { data: trailerData = { results: [] } } = await apiClient.get(`/movie/${movie.id}/videos`);
             // Check if trailerData.results is an array before calling .find
-            const latestTrailer = Array.isArray(trailerData.results)
-              ? trailerData.results.find(video => video.type === "Trailer")
+  console.log("data",trailerData.data.results)
+            const latestTrailer = Array.isArray(trailerData.data.results)
+              ? trailerData.data.results.find(video => video.type === "Trailer")
               : null;
+            console.log(latestTrailer)
+
             return { ...movie, trailer: latestTrailer };
           } catch (error) {
             console.error("Error fetching trailer:", error);
