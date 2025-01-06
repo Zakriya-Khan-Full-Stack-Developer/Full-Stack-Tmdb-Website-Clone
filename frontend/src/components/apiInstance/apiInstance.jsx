@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const apiClient = axios.create({
-  baseURL: "http://localhost:8000/api/v3/tmdb", // Base URL for all API requests
+  baseURL: "https://full-stack-tmdb-website-clone.vercel.app/api/v3/tmdb", // Base URL for all API requests
   headers: {
     'Content-Type': 'application/json',
     // Add any custom headers if needed, such as authorization tokens
