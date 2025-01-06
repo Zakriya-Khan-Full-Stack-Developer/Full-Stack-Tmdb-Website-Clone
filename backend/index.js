@@ -40,10 +40,15 @@ connectDB();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// CORS Configuration
-const corsOptions = {
-  origin: "https://movie-app-netlify.vercel.app" || '*', // Adjust as per production or development environment
-};
+// CORS Configurationconst corsOptions = {
+  const corsOptions = {
+    origin: "https://movie-app-netlify.vercel.app"||"*", // Allow specific origin (production app)
+    // Alternatively, you can use '*' to allow all origins:
+    // origin: '*',
+    methods: "GET, POST, OPTIONS",  // Allowed methods
+    allowedHeaders: "Content-Type, Authorization" // Allowed headers
+  };
+  
 app.use(cors(corsOptions));
 
 // Session middleware

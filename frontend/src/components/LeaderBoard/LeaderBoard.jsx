@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FaTrophy, FaStar } from "react-icons/fa";
-import axios from "axios"; // Use axios to fetch user data
-import apiClient from "../apiInstance/apiInstance";
+import apiClient from "../apiInstance/apiInstance"; // Use the pre-configured axios instance
 
 const Leaderboard = () => {
   const [topUsers, setTopUsers] = useState([]);
@@ -9,21 +8,23 @@ const Leaderboard = () => {
   useEffect(() => {
     const fetchLeaderboardData = async () => {
       try {
-        // Replace with your actual API endpoint
+        // Send a request to your API to get leaderboard data
         const response = await apiClient.get("/leader");
-        const usersData = response.data;
+        
+        const usersData = response.data; // Get data from the API response
+
         if (Array.isArray(usersData)) {
-          const sortedUsers = usersData.sort((a, b) => b.totalScore - a.totalScore);
-          setTopUsers(sortedUsers.slice(0, 10));
+          const sortedUsers = usersData.sort((a, b) => b.totalScore - a.totalScore); // Sort the users by their scores in descending order
+          setTopUsers(sortedUsers.slice(0, 10)); // Store only the top 10 users
         } else {
-          console.error("Unexpected data structure:", usersData);
+          console.error("Unexpected data structure:", usersData); // Handle invalid data structure
         }
       } catch (error) {
-        console.error("Error fetching leaderboard data:", error);
+        console.error("Error fetching leaderboard data:", error); // Handle error
       }
     };
 
-    fetchLeaderboardData();
+    fetchLeaderboardData(); // Fetch the leaderboard data when the component mounts
   }, []);
 
   return (
@@ -76,7 +77,7 @@ const getRandomColor = (username) => {
     "bg-[#20B2AA]", // Light Sea Green
   ];
 
-  const index = username.charCodeAt(0) % colors.length;
+  const index = username.charCodeAt(0) % colors.length; // Generate color based on the first letter of the username
   return colors[index];
 };
 
