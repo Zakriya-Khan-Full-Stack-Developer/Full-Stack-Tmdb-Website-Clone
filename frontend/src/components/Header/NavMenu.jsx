@@ -34,7 +34,7 @@ const NavMenu = ({ navigate, userId }) => {
   };
 
   return (
-    <nav className="flex items-center gap-4 text-[12px] sm:text-[14px] font-medium tracking-wide">
+    <nav className="flex items-center gap-4 text-[12px] sm:text-[14px] font-medium tracking-wide bg-gray-900 py-2 px-3 sm:px-6 rounded-md">
       {/* Watch Here - Navigates to the Root */}
       <div
         onClick={() => navigate("/")}
