@@ -40,10 +40,10 @@ const NavMenu = ({ navigate, userId }) => {
         onClick={() => navigate("/")}
         className="flex items-center gap-1 cursor-pointer"
       >
-        <span className="text-[#E50914] font-extrabold text-lg sm:text-xl tracking-wide">
+        <span className="text-[#1db954] font-extrabold text-lg sm:text-xl tracking-wide">
           Watch Here
         </span>
-        <div className="w-2 h-2 rounded-full bg-[#E50914]"></div>
+        <div className="w-2 h-2 rounded-full bg-[#1db954]"></div>
       </div>
 
       {/* Movies Dropdown */}
@@ -71,7 +71,7 @@ const NavMenu = ({ navigate, userId }) => {
       {/* Popular People */}
       <button
         onClick={() => navigate("/popular-people")}
-        className="text-white text-sm font-semibold hover:text-[#E50914] transition-colors duration-200"
+        className="text-white text-sm font-semibold hover:text-[#1db954] transition-colors duration-200"
       >
         Popular People
       </button>
@@ -79,7 +79,7 @@ const NavMenu = ({ navigate, userId }) => {
       {/* Play Quiz */}
       <button
         onClick={handlePlayQuiz} // Handle Play Quiz button click
-        className="text-white text-sm font-semibold hover:text-[#E50914] transition-colors duration-200"
+        className="text-white text-sm font-semibold hover:text-[#1db954] transition-colors duration-200"
       >
         Play Quiz
       </button>
