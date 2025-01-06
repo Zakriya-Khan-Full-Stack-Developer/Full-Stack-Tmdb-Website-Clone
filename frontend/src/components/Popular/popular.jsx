@@ -19,7 +19,6 @@ const PopularSection = () => {
         // Use the correct endpoint for popular movies or TV shows
         const endpoint = category === "movies" ? "/discover/movie" : "/discover/tv";
         const { data } = await apiClient.get(endpoint);  // Make sure your API client is configured correctly
-  console.log(data.data.results.length)
         if (data.data.results && data.data.results.length > 0) {
           setMovies(data.data.results);
         } else {

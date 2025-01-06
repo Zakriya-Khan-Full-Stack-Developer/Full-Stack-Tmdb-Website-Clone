@@ -11,7 +11,6 @@ function CollectionSection({ movieId }) {
       try {
         setError(null); // Clear any previous errors
         const response = await apiClient.get(`/movie/${movieId}/alternative_titles`);
-        console.log(response);
 
         if (response.data && response.data.data) {
           setCollection(response.data.data); // Assuming 'data.data' contains the collection data

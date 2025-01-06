@@ -15,7 +15,6 @@ const LatestTrailers = () => {
     try {
       setLoading(true);
       const { data: movieData = { results: [] } } = await apiClient.get(`/movies/${category}`);
-      console.log(movieData.results);
       
       const movieTrailers = await Promise.all(
         movieData.results.map(async (movie, index) => {

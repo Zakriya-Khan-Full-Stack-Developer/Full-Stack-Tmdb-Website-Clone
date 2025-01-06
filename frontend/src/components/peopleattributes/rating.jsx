@@ -29,7 +29,6 @@ const RatingPopup = ({ movie, onClose }) => {
           },
         });
 
-        console.log('Profile response:', response.data.user);
         setUserId(response.data.user._id); // Assuming the response contains userId
       } catch (error) {
         console.error('Error fetching profile:', error);
@@ -63,7 +62,6 @@ const RatingPopup = ({ movie, onClose }) => {
         tmdb_id: movie.id,       // tmdb_id should match the movie's TMDb ID
         rating,                  // User rating (0-10 scale)
       };
-      console.log('Payload:', payload);
   
       const response = await axios.post(url, payload);
       console.log('Response:', response);

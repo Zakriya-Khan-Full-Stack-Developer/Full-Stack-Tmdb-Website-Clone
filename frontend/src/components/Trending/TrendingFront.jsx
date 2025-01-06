@@ -20,7 +20,6 @@ const TrendingContainer = () => {
         await new Promise((resolve) => setTimeout(resolve, 500));
         const response = await apiClient.get(`/trending/all`);
         setMovies(response.data.results || []);
-        console.log(response);
         setError(null);
       } catch (error) {
         setError("Failed to fetch trending movies.");
