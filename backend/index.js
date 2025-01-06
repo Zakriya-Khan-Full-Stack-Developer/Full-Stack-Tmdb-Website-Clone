@@ -2,6 +2,7 @@ import express from 'express';
 import session from 'express-session';
 import dotenv from 'dotenv';
 import cors from 'cors';
+import axios from 'axios';
 
 // Routes imports
 import connectDB from './db/db.js';
@@ -40,15 +41,13 @@ connectDB();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// CORS Configurationconst corsOptions = {
-  const corsOptions = {
-    origin: "https://movie-app-netlify.vercel.app"||"*", // Allow specific origin (production app)
-    // Alternatively, you can use '*' to allow all origins:
-    // origin: '*',
-    methods: "GET, POST, OPTIONS",  // Allowed methods
-    allowedHeaders: "Content-Type, Authorization" // Allowed headers
-  };
-  
+// CORS Configuration
+const corsOptions = {
+  origin: "https://movie-app-netlify.vercel.app" || "*", // Allow specific origin (production app)
+  methods: "GET, POST, OPTIONS",  // Allowed methods
+  allowedHeaders: "Content-Type, Authorization" // Allowed headers
+};
+
 app.use(cors(corsOptions));
 
 // Session middleware
@@ -65,6 +64,27 @@ app.use(
 app.use((req, res, next) => {
   console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
   next();
+});
+
+// Proxy Route to forward requests to external API
+app.use('/proxy', async (req, res) => {
+  const externalAPIUrl = `https://full-stack-tmdb-website-clone.vercel.app/api/v3/tmdb${req.url.slice(6)}`; // URL after '/proxy'
+
+  try {
+    // Send the request to the external API
+    const response = await axios.get(externalAPIUrl, {
+      headers: {
+        'Content-Type': 'application/json',
+        // You can add any authorization or custom headers here if needed
+      },
+    });
+    
+    // Forward the response data back to the client
+    res.json(response.data);
+  } catch (error) {
+    console.error("Error forwarding request:", error);
+    res.status(500).json({ error: 'Failed to fetch data from the external API' });
+  }
 });
 
 // TMDB API Routes (direct routes to backend, no proxy)

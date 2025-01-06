@@ -1,12 +1,13 @@
 import axios from 'axios';
 
+// Set the baseURL to point directly to the external API URL
 const apiClient = axios.create({
-  baseURL: "https://full-stack-tmdb-website-clone.vercel.app/api/v3/tmdb", // Base URL for all API requests
+  baseURL: "https://full-stack-tmdb-website-clone.vercel.app/api/v3/tmdb",  // Direct URL to your external API
   headers: {
     'Content-Type': 'application/json',
     // Add any custom headers if needed, such as authorization tokens
   },
-  timeout: 10000, // Optional: timeout for requests
+  timeout: 10000, // Optional timeout for requests
 });
 
 // Add interceptors if needed for logging, error handling, or attaching tokens
