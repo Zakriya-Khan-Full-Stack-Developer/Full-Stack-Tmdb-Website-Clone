@@ -42,7 +42,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // CORS Configuration
 const corsOptions = {
-  origin: "https://full-stack-tmdb-website-clone.vercel.app/" || '*', // Adjust as per production or development environment
+  origin: " http://localhost:5173/" || '*', // Adjust as per production or development environment
 };
 app.use(cors(corsOptions));
 
