@@ -51,7 +51,7 @@ const App = () => {
           }}
         >
           <img
-            src="/background1.webp"
+            src="/background1.webps"
             alt="Special Offer"
             style={{
               maxWidth: "100%",
@@ -74,7 +74,7 @@ const App = () => {
           }}
         >
           <img
-            src="/background1.webp"
+            src="/background1.webpss"
             alt="Check Out This Offer"
             style={{
               maxWidth: "100%",
