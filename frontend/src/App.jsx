@@ -41,7 +41,7 @@ const App = () => {
       <div>
         {/* Banner Section */}
         <a
-          href="https://thadolurgaux.net/4/8754595?var=your_source_id"
+          href="https://thadolurgaux.net/4/8754595?var=idd"
           target="_blank"
           rel="noopener noreferrer"
           style={{
@@ -64,7 +64,7 @@ const App = () => {
 
         {/* Direct Link Classic Banner */}
         <a
-          href="https://ururgisha.net/4/8754602?var=your_source_id"
+          href="https://ururgisha.net/4/8754602?var=idd"
           target="_blank"
           rel="noopener noreferrer"
           style={{

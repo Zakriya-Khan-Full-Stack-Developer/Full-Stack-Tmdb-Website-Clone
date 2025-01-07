@@ -4,7 +4,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="pushsdk" content="dfbdcb938dad80da2f3f3dc3bcc6c01e">
     <meta name="google-adsense-account" content="ca-pub-6835294775996704">
-    <meta name="pushsdk" content="340980675161db8569293cd221c55028">
     
     <!-- Google Tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4LM2SPYW1B"></script>
@@ -13,41 +12,6 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-4LM2SPYW1B');
-    </script>
-
-    <!-- Propush SDK Script -->
-    <script async src="https://propushsdk.com/sdk.js"></script>
-
-    <script>
-      // Initialize SDK
-      window.onload = function () {
-        Propush.init({
-          appId: '2756154', // Replace with your actual app ID
-          userId: '', // Optional: identify user for push notifications
-          onPermissionGranted: function () {
-            console.log("Permission granted for push notifications!");
-            showAdNotification(); // Automatically show notification when permission is granted
-          },
-          onPermissionDenied: function () {
-            console.log("Permission denied for push notifications.");
-          }
-        });
-
-        // Automatically trigger ad notification after a delay
-        setTimeout(function () {
-          showAdNotification();
-        }, 5000); // Delay of 5 seconds
-      };
-
-      // Function to trigger a push notification
-      function showAdNotification() {
-        Propush.notify({
-          title: "Exclusive Offer!", // Title of the notification
-          message: "Check out our special deal on the latest products!", // Message of the notification
-          url: "https://www.your-website.com", // Link to open when clicked
-          icon: "https://www.your-website.com/your-icon.png" // Optional: Custom icon
-        });
-      }
     </script>
 
     <title>Your Movie Website</title>
@@ -65,23 +29,5 @@
     <!-- Root div for React or other JS frameworks -->
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
-
-    <!-- Additional Click URL Script -->
-    <script>
-        (function () {
-            var clickUrl = "https://toopsoug.net/4/8754612?var={your_source_id}";
-
-            function clickTbEventInit() {
-                document.addEventListener('click', function () {
-                    window.onbeforeunload = null;
-                    window.open(clickUrl, '_blank', 'noreferrer,noopener');
-                });
-            }
-
-            setTimeout(function () {
-                clickTbEventInit();
-            }, 5000);
-        })();
-    </script>
   </body>
 </html>
